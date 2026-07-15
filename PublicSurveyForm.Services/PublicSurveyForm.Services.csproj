@@ -11,4 +11,9 @@
     <Folder Include="InterfaceService\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PublicSurveyForm.Domain\PublicSurveyForm.Domain.csproj" />
+    <ProjectReference Include="..\PublicSurveyForm.Repository\PublicSurveyForm.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
