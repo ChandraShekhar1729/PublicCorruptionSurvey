@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="ImplementationService\" />
+    <Folder Include="InterfaceService\" />
+  </ItemGroup>
+
 </Project>
