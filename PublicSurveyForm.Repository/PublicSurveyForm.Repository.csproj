@@ -9,6 +9,16 @@
   <ItemGroup>
     <Folder Include="Implementaion\" />
     <Folder Include="Interface\" />
+    <Folder Include="DBContext\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.79" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PublicSurveyForm.Domain\PublicSurveyForm.Domain.csproj" />
   </ItemGroup>
 
 </Project>
