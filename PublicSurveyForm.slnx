@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PublicSurveyForm.Domain/PublicSurveyForm.Domain.csproj" Id="02cc0486-c1f8-4fd0-bdb7-9b940373abc9" />
+  <Project Path="PublicSurveyForm.Repository/PublicSurveyForm.Repository.csproj" Id="3ec4f98a-bef6-4850-a2e6-989592f7fe20" />
+  <Project Path="PublicSurveyForm.Services/PublicSurveyForm.Services.csproj" Id="4e57c7aa-768a-4da3-b42f-91899ee590c2" />
+  <Project Path="PublicSurveyForm.Web/PublicSurveyForm.Web.csproj" Id="9ce08d56-e2ba-427b-b29b-1117153d3cf9" />
+</Solution>
