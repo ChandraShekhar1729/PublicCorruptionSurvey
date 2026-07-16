@@ -1,0 +1,106 @@
+﻿@page "/survey"
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>What Do You Think About Corruption in India?</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="mt-8">
+    <MudPaper Class="pa-6" Elevation="3">
+        <MudText Typo="Typo.h5" Class="mb-1">What Do You Think About Corruption in India?</MudText>
+        <MudText Typo="Typo.body2" Class="mb-4" Style="color:#616161;">
+            Share your views — your response helps us understand public perception.
+        </MudText>
+
+        <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
+            <DataAnnotationsValidator />
+
+            <MudTextField T="string"
+                          Label="Full Name"
+                          @bind-Value="Model!.FullName"
+                          For="@(() => Model!.FullName)"
+                          Variant="Variant.Outlined"
+                          Class="mb-4"
+                          RequiredError="Full Name is required"
+                          />
+
+            <MudGrid>
+                <MudItem xs="6">
+                    <MudTextField T="string"
+                                  Label="First Name"
+                                  @bind-Value="Model.FirstName"
+                                  For="@(() => Model.FirstName)"
+                                  Variant="Variant.Outlined"
+                                  RequiredError="First Name is required" />
+                </MudItem>
+                <MudItem xs="6">
+                    <MudTextField T="string"
+                                  Label="Last Name"
+                                  @bind-Value="Model.LastName"
+                                  For="@(() => Model.LastName)"
+                                  Variant="Variant.Outlined"
+                                  RequiredError="Last Name is required" />
+                </MudItem>
+            </MudGrid>
+
+            @* <MudDatePicker Label="Date of Birth"
+                           @bind-Value="Model.DateOfBirth"
+                           For="@(() => Model.DateOfBirth)"
+                           MinDate="@_minDate"
+                           MaxDate="@_maxDate"
+                           DateFormat="dd/MM/yyyy"
+                           Variant="Variant.Outlined"
+                           Editable="true"
+                           Class="mt-4 mb-4"
+                           RequiredError="DOB is required" /> *@
+
+            <MudTextField T="string"
+                          Label="Place Living"
+                          @bind-Value="Model.PlaceLiving"
+                          For="@(() => Model.PlaceLiving)"
+                          Variant="Variant.Outlined"
+                          Class="mb-4"
+                          RequiredError="Place of Living is required" />
+
+            <MudTextField T="string"
+                          Label="What are your views on corruption in India?"
+                          @bind-Value="Model.CorruptionInIndia"
+                          For="@(() => Model.CorruptionInIndia)"
+                          Variant="Variant.Outlined"
+                          Lines="6"
+                          Immediate="true"
+                          Class="mb-4" 
+                          RequiredError="This is required filed" />
+
+            <MudTextField T="string"
+                          Label="Email"
+                          @bind-Value="Model.Email"
+                          For="@(() => Model.Email)"
+                          InputType="InputType.Email"
+                          Variant="Variant.Outlined"
+                          Class="mb-4" 
+                          RequiredError="Email is required"
+                          />
+
+            <MudButton ButtonType="ButtonType.Submit"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       FullWidth="true">
+                Submit
+            </MudButton>
+        </EditForm>
+
+        @if (_submitted)
+        {
+            <MudAlert Severity="Severity.Success" Class="mt-4">
+                Thank you — your response has been recorded.
+            </MudAlert>
+        }
+        @if (_errorMessage is not null)
+        {
+            <MudAlert Severity="Severity.Error" Class="mt-4" placem>
+                @_errorMessage
+            </MudAlert>
+        }
+    </MudPaper>
+</MudContainer>
+
+
