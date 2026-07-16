@@ -1,4 +1,9 @@
 using MudBlazor.Services;
+using PublicSurveyForm.Repository.DBContext;
+using PublicSurveyForm.Repository.Implementaion;
+using PublicSurveyForm.Repository.Interface;
+using PublicSurveyForm.Services.ImplementationService;
+using PublicSurveyForm.Services.InterfaceService;
 using PublicSurveyForm.Web.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddMudServices();
+builder.Services.AddSingleton<DatabaseDapperContext>();
+builder.Services.AddScoped<ISurveyRepository,SurveyRepository>();
+builder.Services.AddScoped<ISurveyService,SurveyService>();
 
 var app = builder.Build();
 

@@ -1,23 +1,35 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
+
+<MudThemeProvider/>
+<MudPopoverProvider/>
+<MudDialogProvider
+    Position="DialogPosition.Center"
+    CloseButton="false"/>
+<MudSnackbarProvider />
+<MudLayout>
+    <MudAppBar>
+        <span class="survey">Public Survey Form</span>
+    </MudAppBar>
+    <MudDrawer Open="false"> </MudDrawer>
+
+    <MudMainContent>
+
+       
         <NavMenu />
-    </div>
+    
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+       <main>
+            <article class="content px-4">
+                @Body
+            </article>
+       </main>
 
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+    </MudMainContent>
+</MudLayout>
+
