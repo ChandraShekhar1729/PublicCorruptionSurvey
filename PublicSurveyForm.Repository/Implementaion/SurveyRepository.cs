@@ -31,6 +31,7 @@ namespace PublicSurveyForm.Repository.Implementaion
             catch(Exception ex)
             {
                 var error = ex.Message;
+                Console.WriteLine(error);
             }
 
             return false;
