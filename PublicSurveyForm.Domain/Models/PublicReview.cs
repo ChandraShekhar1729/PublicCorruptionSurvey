@@ -21,5 +21,9 @@ namespace PublicSurveyForm.Domain.Models
         public string? Email { get; set; }
         [Required(ErrorMessage = "Corruption in India required")]
         public string? CorruptionInIndia { get; set; }
+
+        public string? IpAddress { get; set; }
+        public string? BrowserName { get; set; }
+        public string? UserAgent { get; set; } 
     }
 }

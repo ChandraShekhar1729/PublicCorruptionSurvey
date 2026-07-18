@@ -13,6 +13,8 @@ namespace PublicSurveyForm.Web.Components.Pages
 
         [Inject]
         private  ISurveyService? SurveyService { get; set; }
+        [Inject]
+        private IClientInfoService? ClientInfoService { get; set; }
         private PublicReview? Model { get; set; }
 
         protected override async Task OnInitializedAsync()
@@ -21,6 +23,9 @@ namespace PublicSurveyForm.Web.Components.Pages
             Model.DateOfBirth = DateTime.Now;
             _minDate = DateTime.Now.AddYears(-30);
             _maxDate = DateTime.Now.AddYears(+30);
+            Model.BrowserName = await ClientInfoService!.GetBrowserName();
+            Model.IpAddress = await ClientInfoService!.GetIpAddress();
+            Model.UserAgent = System.Environment.OSVersion.ToString();
         }
 
         private async Task HandleValidSubmit()
