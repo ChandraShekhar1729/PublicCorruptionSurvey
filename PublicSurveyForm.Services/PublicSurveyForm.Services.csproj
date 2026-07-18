@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PublicSurveyForm.Domain\PublicSurveyForm.Domain.csproj" />
     <ProjectReference Include="..\PublicSurveyForm.Repository\PublicSurveyForm.Repository.csproj" />
   </ItemGroup>

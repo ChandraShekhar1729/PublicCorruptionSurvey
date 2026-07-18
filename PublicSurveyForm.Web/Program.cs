@@ -15,7 +15,8 @@ builder.Services.AddMudServices();
 builder.Services.AddSingleton<DatabaseDapperContext>();
 builder.Services.AddScoped<ISurveyRepository,SurveyRepository>();
 builder.Services.AddScoped<ISurveyService,SurveyService>();
-
+builder.Services.AddScoped<IClientInfoService, ClientInfoService>();
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
