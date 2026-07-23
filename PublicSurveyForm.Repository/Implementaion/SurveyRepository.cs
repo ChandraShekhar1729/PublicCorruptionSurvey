@@ -23,7 +23,7 @@ namespace PublicSurveyForm.Repository.Implementaion
                 connectionString = connection.ConnectionString;
                 var result = await connection.ExecuteAsync(
                     "[dbo].[InsertCorruptionSurveyResponse]",
-                    new { model.FullName, model.FirstName, model.LastName, model.PlaceLiving, model.Email, model.CorruptionInIndia,model.DateOfBirth },
+                    new { model.FullName, model.FirstName, model.LastName, model.PlaceLiving, model.Email, model.CorruptionInIndia,model.DateOfBirth ,model.IpAddress,model.UserAgent,model.BrowserName},
                     commandType: CommandType.StoredProcedure);
 
                 if (result > 0) { return true; } else { return false; }
